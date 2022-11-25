@@ -18,34 +18,33 @@
 export default {
   name: "CardsItem",
   props: {
-    card: Object
+    card: Object,
   },
 };
 </script>
 
-
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.container{
+.container {
   width: calc(100% / 5);
   padding: 35px 25px;
 
-  .card{
-    width: 100% !important;;
+  .card {
+    width: 100% !important;
     height: 350px;
     margin: 5px;
-    background-color: rgb(46,58,70);
+    background-color: rgb(46, 58, 70);
 
-    img{
+    img {
       padding: 10px;
     }
 
-    .card-title{
+    .card-title {
       color: white;
       font-weight: bold;
     }
 
-    .card-text{
+    .card-text {
       color: gray;
     }
   }
