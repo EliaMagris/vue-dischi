@@ -49,6 +49,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   background-color: rgb(30, 45, 59);
+  box-sizing: border-box;
 
   .logo {
     padding: 15px;
