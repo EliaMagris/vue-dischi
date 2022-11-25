@@ -5,38 +5,32 @@
     </div>
     <div class="mainContainer">
       <div class="cardContainer">
-        <CardsItem
-          v-for="(element, index) in infoCard"
-          :key="index"
-          :card="element"
-        />
+        <CardsItem v-for="(element, index) in infoCard" :key="index" :card="element" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import CardsItem from "./components/CardsItem.vue";
-import axios from "axios";
+import CardsItem from './components/CardsItem.vue';
+import axios from 'axios';
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     CardsItem,
   },
 
   data() {
     return {
-      infoCard: "",
+      infoCard: '',
     };
   },
   mounted() {
-    axios
-      .get("https://flynn.boolean.careers/exercises/api/array/music")
-      .then((response) => {
-        this.infoCard = response.data.response;
-        console.log(this.infoCard);
-      });
+    axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((response) => {
+      this.infoCard = response.data.response;
+      console.log(this.infoCard);
+    });
   },
 };
 </script>
@@ -49,7 +43,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   background-color: rgb(30, 45, 59);
-  box-sizing: border-box;
 
   .logo {
     padding: 15px;
@@ -69,7 +62,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     width: 80%;
-    padding: 20px;
+    padding: 80px 100px;
   }
 }
 </style>

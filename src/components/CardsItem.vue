@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: "CardsItem",
+  name: 'CardsItem',
   props: {
     card: Object,
   },
@@ -27,11 +27,11 @@ export default {
 <style scoped lang="scss">
 .container {
   width: calc(100% / 5);
-  padding: 35px 25px;
+  margin-top: 30px;
 
   .card {
     width: 100% !important;
-    height: 350px;
+    height: 100%;
     margin: 5px;
     background-color: rgb(46, 58, 70);
 
