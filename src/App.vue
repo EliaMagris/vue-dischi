@@ -3,9 +3,19 @@
     <div class="logo">
       <img src="../src/assets/img/logo-small.svg" alt="" />
     </div>
+    <div>
+      <select name="" id="" v-model="selectGen">
+        <option :value="elem" v-for="(elem, index) in infoSelect" :key="index">{{ elem }}</option>
+      </select>
+    </div>
     <div class="mainContainer">
       <div class="cardContainer">
-        <CardsItem v-for="(element, index) in infoCard" :key="index" :card="element" />
+        <CardsItem
+          v-for="(element, index) in infoCard"
+          :key="index"
+          :card="element"
+          :class="element.genre == selectGen ? 'd-block' : 'd-none'"
+        />
       </div>
     </div>
   </div>
@@ -23,13 +33,21 @@ export default {
 
   data() {
     return {
-      infoCard: '',
+      infoCard: [],
+      infoSelect: [],
+      selectGen: '',
     };
   },
+
   mounted() {
     axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((response) => {
       this.infoCard = response.data.response;
       console.log(this.infoCard);
+      this.infoCard.forEach((SingleGen) => {
+        if (!this.infoSelect.includes(SingleGen.genre)) {
+          this.infoSelect.push(SingleGen.genre);
+        }
+      });
     });
   },
 };
